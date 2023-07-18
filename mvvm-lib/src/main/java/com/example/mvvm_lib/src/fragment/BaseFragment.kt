@@ -24,4 +24,9 @@ abstract class BaseFragment<VB : ViewDataBinding>(@LayoutRes layoutId: Int = 0) 
 
     abstract fun initData()
 
+    override fun onDetach() {
+        super.onDetach()
+        mBinding.unbind()
+    }
+
 }

@@ -7,7 +7,6 @@
             name="loginViewModel"
             type="com.example.mvvmdemo.login.LoginViewModel" />
 
-        <import type="com.example.mvvmdemo.R"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"

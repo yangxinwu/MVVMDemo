@@ -7,7 +7,7 @@ import com.example.mvvm_lib.src.viewModel.BaseViewModel
 import java.lang.reflect.ParameterizedType
 
 
-abstract class BaseVMActivity<VB : ViewDataBinding, BM : BaseViewModel>(@LayoutRes layoutId: Int = 0) :
+abstract class BaseVMActivity<VB : ViewDataBinding, BM : BaseViewModel>(@LayoutRes layoutId: Int) :
     BaseActivity<VB>(layoutId) {
 
     lateinit var mViewModel: BM

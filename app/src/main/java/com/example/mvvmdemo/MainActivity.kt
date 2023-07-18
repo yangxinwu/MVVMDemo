@@ -19,8 +19,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
         mBinding.btnRecycleView.setOnClickListener {
             startActivity(Intent(this, RecycleViewDemoActivity::class.java))
         }
-
-
     }
 
     override fun initData() {

@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 
-abstract class BaseActivity<VB : ViewDataBinding>(@LayoutRes layoutId: Int = 0) :
+abstract class BaseActivity<VB : ViewDataBinding>(@LayoutRes layoutId:Int) :
     AppCompatActivity() {
 
     private var mLayoutId = layoutId
@@ -17,8 +17,8 @@ abstract class BaseActivity<VB : ViewDataBinding>(@LayoutRes layoutId: Int = 0) 
 
         val childView = layoutInflater.inflate(mLayoutId, null)
         mBinding = DataBindingUtil.bind(childView)!!
-
         setContentView(mBinding.root)
+
         initData()
         initView()
 
@@ -28,5 +28,10 @@ abstract class BaseActivity<VB : ViewDataBinding>(@LayoutRes layoutId: Int = 0) 
     abstract fun initView()
 
     abstract fun initData()
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mBinding.unbind()
+    }
 
 }

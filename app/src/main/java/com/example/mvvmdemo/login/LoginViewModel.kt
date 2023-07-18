@@ -14,7 +14,6 @@ class LoginViewModel :BaseViewModel(){
      private var _showProgress = MutableLiveData<Boolean>()
      var showProgress:LiveData<Boolean> = _showProgress
 
-
      fun login(){
           viewModelScope.launch {
 
@@ -23,7 +22,6 @@ class LoginViewModel :BaseViewModel(){
                delay(5000) // 模拟登陆请求
 
                _showProgress.postValue(false)
-
           }
      }
 
