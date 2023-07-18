@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:background="@android:color/darker_gray"
+            android:gravity="center"
+            android:text="MVVM简单场景"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btn_recycle_view"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:background="@android:color/darker_gray"
+            android:gravity="center"
+            android:text="MVVM RecycleView"
+            android:textSize="18sp" />
+
+
+    </LinearLayout>
+</layout>

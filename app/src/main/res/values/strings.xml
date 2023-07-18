@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MVVMDemo</string>
+    <string name="base_activity">继承BaseActivity使用</string>
+</resources>
