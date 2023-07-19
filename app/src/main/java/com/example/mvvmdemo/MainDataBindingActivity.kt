@@ -5,7 +5,7 @@ package com.example.mvvmdemo
 import android.content.Intent
 import com.example.mvvm_lib.src.activity.BaseDataBindingActivity
 import com.example.mvvmdemo.databinding.ActivityMainBinding
-import com.example.mvvmdemo.activity.LoginBaseViewModelDataBindingActivity
+import com.example.mvvmdemo.activity.LoginViewModelActivity
 import com.example.mvvmdemo.fragment.TestPagerDataBindingActivity
 import com.example.mvvmdemo.recycleview.RVDataBindingActivity
 import com.example.mvvmdemo.repository.MockRepositoryDataBindingActivity
@@ -15,7 +15,7 @@ class MainDataBindingActivity : BaseDataBindingActivity<ActivityMainBinding>(R.l
 
     override fun initView() {
         mBinding.btnLogin.setOnClickListener {
-            startActivity(Intent(this, LoginBaseViewModelDataBindingActivity::class.java))
+            startActivity(Intent(this, LoginViewModelActivity::class.java))
         }
 
         mBinding.btnRecycleView.setOnClickListener {

@@ -6,6 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 
+/**
+ * 快捷支持DataBinding的Activity基类
+ */
 abstract class BaseDataBindingActivity<VDB : ViewDataBinding>(@LayoutRes layoutId:Int) :
     AppCompatActivity() {
 
@@ -24,8 +27,14 @@ abstract class BaseDataBindingActivity<VDB : ViewDataBinding>(@LayoutRes layoutI
 
     }
 
+    /**
+     * 初始化View
+     */
     abstract fun initView()
 
+    /**
+     * 初始化数据
+     */
     abstract fun initData()
 
     override fun onDestroy() {

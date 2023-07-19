@@ -1,22 +1,23 @@
 package com.example.mvvmdemo.fragment
 
 import android.annotation.SuppressLint
+import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.example.mvvm_lib.src.fragment.BaseViewModeDataBindingFragment
+import com.example.mvvmdemo.BR
 import com.example.mvvmdemo.R
 import com.example.mvvmdemo.databinding.FragmentViewModelPagerBinding
 
 
-class ViewModelPagerDataBindingFragment :
+class ViewModelPagerFragment :
     BaseViewModeDataBindingFragment<FragmentViewModelPagerBinding,
             FragmentViewModel>(R.layout.fragment_view_model_pager) {
 
     lateinit var shareViewModel: FragmentShareViewModel
 
     override fun initVMData() {
-
-
+        mViewModel.getMockData()
     }
 
     override fun initView() {
@@ -31,6 +32,18 @@ class ViewModelPagerDataBindingFragment :
                 Toast.LENGTH_SHORT
             ).show()
         }
+    }
+
+    override fun observeLiveData() {
+        super.observeLiveData()
+        mViewModel.imgData.observe(this){
+            Log.d("setImage","---------observeLiveData----image------$it----")
+        }
+    }
+
+
+    override fun getVariableId(): Int {
+        return BR.viewModel
     }
 
     @SuppressLint("SetTextI18n")

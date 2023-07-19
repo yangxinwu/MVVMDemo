@@ -19,6 +19,10 @@ class RVDataBindingActivity :
                 this, DividerItemDecoration.VERTICAL
             )
         )
+
+        mBinding.ivClose.setOnClickListener {
+            finish()
+        }
     }
 
     override fun getVariableId(): Int {

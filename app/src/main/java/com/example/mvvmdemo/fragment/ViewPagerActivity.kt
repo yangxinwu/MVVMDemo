@@ -33,7 +33,7 @@ class DemoCollectionPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapte
     override fun getCount(): Int = 4
 
     override fun getItem(i: Int): Fragment {
-        val fragment = if (i % 2 == 0) SimplePagerDataBindingFragment() else ViewModelPagerDataBindingFragment()
+        val fragment = if (i % 2 == 0) SimplePagerFragment() else ViewModelPagerFragment()
         fragment.arguments = Bundle().apply {
             putInt(ARG_OBJECT, i + 1)
         }

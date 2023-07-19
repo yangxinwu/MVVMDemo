@@ -6,7 +6,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.mvvm_lib.src.viewModel.BaseViewModel
 import java.lang.reflect.ParameterizedType
 
-
+/**
+ * 快捷支持MVVM + DataBinding的Fragment基类
+ */
 abstract class BaseViewModeDataBindingFragment<VDB : ViewDataBinding, BVM : BaseViewModel>(@LayoutRes layoutId: Int = 0) :
     BaseDataBindingFragment<VDB>(layoutId) {
     lateinit var mViewModel: BVM
@@ -17,21 +19,34 @@ abstract class BaseViewModeDataBindingFragment<VDB : ViewDataBinding, BVM : Base
             mBinding.setVariable(getVariableId(), mViewModel)
             mBinding.executePendingBindings()
         }
+        mBinding.lifecycleOwner = this //如果不设置的话，xml中使用livedata 不会刷新
         initVMData()
         observeLiveData()
     }
 
+    /**
+     * 用于设置DataBinding中设置再xml中的变量
+     */
     open fun getVariableId(): Int {
         return -1
     }
 
+    /**
+     * 初始化ViewModel中的数据
+     */
     abstract fun initVMData()
 
 
+    /**
+     * LiveData观察者获取到监听
+     */
     open fun observeLiveData() {
 
     }
 
+    /**
+     * 获取ViewModel实例
+     */
     private fun getViewModel(): BVM? {
         //返回表示此 Class 所表示的实体（类、接口、基本类型或 void）的直接超类的 Type
         val type = javaClass.genericSuperclass

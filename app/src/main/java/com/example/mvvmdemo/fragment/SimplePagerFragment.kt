@@ -8,7 +8,7 @@ import com.example.mvvmdemo.R
 import com.example.mvvmdemo.databinding.FragmentSimplePagerBinding
 
 
-class SimplePagerDataBindingFragment :
+class SimplePagerFragment :
     BaseDataBindingFragment<FragmentSimplePagerBinding>(R.layout.fragment_simple_pager) {
 
     private lateinit var shareViewModel: FragmentShareViewModel

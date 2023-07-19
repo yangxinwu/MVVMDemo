@@ -25,6 +25,19 @@
             android:textSize="18sp" />
 
         <Button
+            android:id="@+id/btn_mock_repository"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:background="@android:color/darker_gray"
+            android:gravity="center"
+            android:text="Mock Repository"
+            android:textSize="18sp" />
+
+
+        <Button
             android:id="@+id/btn_recycle_view"
             android:layout_width="match_parent"
             android:layout_height="45dp"
@@ -46,18 +59,6 @@
             android:background="@android:color/darker_gray"
             android:gravity="center"
             android:text="MVVM Fragment"
-            android:textSize="18sp" />
-
-        <Button
-            android:id="@+id/btn_mock_repository"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="30dp"
-            android:background="@android:color/darker_gray"
-            android:gravity="center"
-            android:text="Mock Repository"
             android:textSize="18sp" />
 
 

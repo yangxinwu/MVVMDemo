@@ -7,6 +7,7 @@ open class BaseViewModel : ViewModel(), BaseLifeCycleObserver {
 
     inline fun <reified R> getRepository(): R? {
         try {
+            //通过反射获取 Repository 仓库实例
             val clazz = R::class.java
             return clazz.newInstance()
         } catch (e: Exception) {

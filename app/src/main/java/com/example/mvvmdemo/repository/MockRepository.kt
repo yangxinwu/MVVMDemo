@@ -4,28 +4,28 @@ import androidx.lifecycle.MutableLiveData
 
 class MockRepository {
 
-    val mResultLiveData = MutableLiveData<String>()
+    val mDataLiveData = MutableLiveData<String>()
 
-    private var mIsSuccess = true
+    private var mFetchSuccess = true
 
 
-    fun doHttpLiveData() {
-        if (mIsSuccess) {
-            mResultLiveData.postValue("我是LiveData方式模拟数据")
+    fun mockFetchDataFromRemoteServer() {
+        if (mFetchSuccess) {
+            mDataLiveData.postValue("成功获取到远程server的模拟数据")
         } else {
-            mResultLiveData.postValue("网络请求失败")
+            mDataLiveData.postValue("网络请求失败")
         }
     }
 
 
-    fun doHttpCallback(
+    fun mockFetchDataFromCallBack(
         success: (result: String) -> Unit,
         error: (error: String) -> Unit
     ) {
-        if (mIsSuccess) {
-            success.invoke("我是回调方式模拟数据")
+        if (mFetchSuccess) {
+            success.invoke("成功获取到回调方法的模拟数据")
         } else {
-            error.invoke("我是回调方式的网络请求失败")
+            error.invoke("回调方法请求失败")
         }
 
     }

@@ -9,7 +9,7 @@ class MockRepositoryViewModel : BaseViewModel() {
     /**
      * 获取需要的Repository
      */
-    private val repository by lazy {
+    private val mRepository by lazy {
         getRepository<MockRepository>()
     }
 
@@ -17,24 +17,24 @@ class MockRepositoryViewModel : BaseViewModel() {
      * 获取LiveData
      */
     fun getLiveData(): MutableLiveData<String>? {
-        return repository?.mResultLiveData
+        return mRepository?.mDataLiveData
     }
 
     /**
-     *LiveData进行返回数据,模拟网络请求
+     *模拟从服务端获取数据
      */
-    fun doHttpLiveData() {
-        repository?.doHttpLiveData()
+    fun mockFetchDataFromRemoteServer() {
+        mRepository?.mockFetchDataFromRemoteServer()
     }
 
     /**
-     * 模拟数据请求，真实情况，请以实际业务为主
+     * 模拟从回调中获取数据
      */
-    fun doHttpCallback(
+    fun mockFetchDataFromCallBack(
         success: (result: String) -> Unit,
         error: (error: String) -> Unit
     ) {
-        repository?.doHttpCallback({
+        mRepository?.mockFetchDataFromCallBack({
             success.invoke(it)
         }, {
             error.invoke(it)

@@ -9,16 +9,18 @@ class MockRepositoryDataBindingActivity :
     BaseViewModeDataBindingActivity<ActivityRepositoryBinding, MockRepositoryViewModel>(R.layout.activity_repository) {
 
     override fun initView() {
-
+        mBinding.ivClose.setOnClickListener {
+            finish()
+        }
     }
 
     override fun initVMData() {
         mBinding.btnLiveData.setOnClickListener {
-            mViewModel.doHttpLiveData()
+            mViewModel.mockFetchDataFromRemoteServer()
         }
 
         mBinding.btnCallBack.setOnClickListener {
-            mViewModel.doHttpCallback({
+            mViewModel.mockFetchDataFromCallBack({
                 //成功
                 Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
             }, {

@@ -9,7 +9,7 @@ import com.example.mvvmdemo.R
 import com.example.mvvmdemo.BR
 import com.example.mvvmdemo.databinding.ActivityLoginBinding
 
-class LoginBaseViewModelDataBindingActivity :
+class LoginViewModelActivity :
     BaseViewModeDataBindingActivity<ActivityLoginBinding, LoginViewModel>(R.layout.activity_login) {
 
     override fun initVMData() {
@@ -21,7 +21,11 @@ class LoginBaseViewModelDataBindingActivity :
         return BR.loginViewModel
     }
 
-    override fun initView() {}
+    override fun initView() {
+        mBinding.ivClose.setOnClickListener {
+            finish()
+        }
+    }
 
     override fun observeLiveData() {
         super.observeLiveData()

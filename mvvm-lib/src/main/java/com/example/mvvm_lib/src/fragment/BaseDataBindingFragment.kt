@@ -7,7 +7,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 
-
+/**
+ * 快捷支持DataBinding的Fragment基类
+ */
 abstract class BaseDataBindingFragment<VDB : ViewDataBinding>(@LayoutRes layoutId: Int) :
     Fragment(layoutId) {
 
@@ -20,8 +22,14 @@ abstract class BaseDataBindingFragment<VDB : ViewDataBinding>(@LayoutRes layoutI
         initData()
     }
 
+    /**
+     * 初始化View
+     */
     open fun initView() {}
 
+    /**
+     * 初始化数据
+     */
     abstract fun initData()
 
     override fun onDetach() {

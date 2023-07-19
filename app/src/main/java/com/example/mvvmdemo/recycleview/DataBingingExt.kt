@@ -1,5 +1,6 @@
 package com.example.mvvmdemo.recycleview
 
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -33,5 +34,6 @@ fun manageState(progressBarView: ConstraintLayout, visible: Boolean) {
 
 @BindingAdapter("setImage")
 fun setImage(imageView: ImageView, image: Int) {
+    Log.d("setImage","-------------image------$image----")
     imageView.setBackgroundResource(image)
 }

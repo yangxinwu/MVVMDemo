@@ -9,14 +9,24 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp">
+       >
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@android:drawable/ic_menu_close_clear_cancel"
+            />
 
         <Button
             android:id="@+id/btn_live_data"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="LiveData模拟"
+            android:layout_marginTop="50dp"
+            android:text="模拟请求远程server数据"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,7 +34,8 @@
             android:id="@+id/btn_call_back"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="回调模拟"
+            android:text="模拟请求回调方法"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_live_data" />
 
