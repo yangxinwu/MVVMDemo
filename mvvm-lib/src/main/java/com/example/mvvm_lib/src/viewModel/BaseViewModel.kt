@@ -5,6 +5,7 @@ import com.example.mvvm_lib.src.lifecycle.BaseLifeCycleObserver
 
 open class BaseViewModel : ViewModel(), BaseLifeCycleObserver {
 
+    //使用reified 作用于函数上, 类型擦除后的再生，便于使用泛型以及获取方法的泛型类型。
     inline fun <reified R> getRepository(): R? {
         try {
             //通过反射获取 Repository 仓库实例
