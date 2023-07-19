@@ -4,13 +4,13 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
-import com.example.mvvm_lib.src.activity.BaseActivity
+import com.example.mvvm_lib.src.activity.BaseDataBindingActivity
 import com.example.mvvmdemo.R
 import com.example.mvvmdemo.databinding.ActivityViewPagerBinding
 
 
 @Suppress("DEPRECATION")
-class TestPagerActivity : BaseActivity<ActivityViewPagerBinding>(R.layout.activity_view_pager) {
+class TestPagerDataBindingActivity : BaseDataBindingActivity<ActivityViewPagerBinding>(R.layout.activity_view_pager) {
 
     private lateinit var demoCollectionPagerAdapter: DemoCollectionPagerAdapter
 
@@ -33,7 +33,7 @@ class DemoCollectionPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapte
     override fun getCount(): Int = 4
 
     override fun getItem(i: Int): Fragment {
-        val fragment = if (i % 2 == 0) SimplePagerFragment() else ViewModelPagerFragment()
+        val fragment = if (i % 2 == 0) SimplePagerDataBindingFragment() else ViewModelPagerDataBindingFragment()
         fragment.arguments = Bundle().apply {
             putInt(ARG_OBJECT, i + 1)
         }

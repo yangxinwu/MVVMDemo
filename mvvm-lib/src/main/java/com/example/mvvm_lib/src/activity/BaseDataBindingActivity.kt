@@ -6,11 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 
-abstract class BaseActivity<VB : ViewDataBinding>(@LayoutRes layoutId:Int) :
+abstract class BaseDataBindingActivity<VDB : ViewDataBinding>(@LayoutRes layoutId:Int) :
     AppCompatActivity() {
 
     private var mLayoutId = layoutId
-    lateinit var mBinding: VB
+    lateinit var mBinding: VDB
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

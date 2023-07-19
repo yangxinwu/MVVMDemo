@@ -7,9 +7,9 @@ import com.example.mvvm_lib.src.viewModel.BaseViewModel
 import java.lang.reflect.ParameterizedType
 
 
-abstract class BaseVMFragment<VB : ViewDataBinding, BM : BaseViewModel>(@LayoutRes layoutId: Int = 0) :
-    BaseFragment<VB>(layoutId) {
-    lateinit var mViewModel: BM
+abstract class BaseViewModeDataBindingFragment<VDB : ViewDataBinding, BVM : BaseViewModel>(@LayoutRes layoutId: Int = 0) :
+    BaseDataBindingFragment<VDB>(layoutId) {
+    lateinit var mViewModel: BVM
     override fun initData() {
         mViewModel = getViewModel()!!
         val variableId = getVariableId()
@@ -32,15 +32,18 @@ abstract class BaseVMFragment<VB : ViewDataBinding, BM : BaseViewModel>(@LayoutR
 
     }
 
-    private fun getViewModel(): BM? {
+    private fun getViewModel(): BVM? {
+        //返回表示此 Class 所表示的实体（类、接口、基本类型或 void）的直接超类的 Type
         val type = javaClass.genericSuperclass
         if (type != null && type is ParameterizedType) {
+            //返回表示此类型实际类型参数的 Type 对象的数组
             val actualTypeArguments = type.actualTypeArguments
+            //获取ViewModel的类型
             val tClass = actualTypeArguments[1]
             return ViewModelProvider(
                 this,
                 ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().application)
-            ).get(tClass as Class<BM>)
+            )[tClass as Class<BVM>]
         }
         return null
     }

@@ -4,13 +4,13 @@ import android.annotation.SuppressLint
 import android.util.Log
 import android.view.View
 import android.widget.Toast
-import com.example.mvvm_lib.src.activity.BaseVMActivity
+import com.example.mvvm_lib.src.activity.BaseViewModeDataBindingActivity
 import com.example.mvvmdemo.R
 import com.example.mvvmdemo.BR
 import com.example.mvvmdemo.databinding.ActivityLoginBinding
 
-class LoginBaseViewModelActivity :
-    BaseVMActivity<ActivityLoginBinding, LoginViewModel>(R.layout.activity_login) {
+class LoginBaseViewModelDataBindingActivity :
+    BaseViewModeDataBindingActivity<ActivityLoginBinding, LoginViewModel>(R.layout.activity_login) {
 
     override fun initVMData() {
         mViewModel.account.value = "test"

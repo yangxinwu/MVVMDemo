@@ -3,13 +3,13 @@ package com.example.mvvmdemo.fragment
 import android.annotation.SuppressLint
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
-import com.example.mvvm_lib.src.fragment.BaseFragment
+import com.example.mvvm_lib.src.fragment.BaseDataBindingFragment
 import com.example.mvvmdemo.R
 import com.example.mvvmdemo.databinding.FragmentSimplePagerBinding
 
 
-class SimplePagerFragment :
-    BaseFragment<FragmentSimplePagerBinding>(R.layout.fragment_simple_pager) {
+class SimplePagerDataBindingFragment :
+    BaseDataBindingFragment<FragmentSimplePagerBinding>(R.layout.fragment_simple_pager) {
 
     private lateinit var shareViewModel: FragmentShareViewModel
 

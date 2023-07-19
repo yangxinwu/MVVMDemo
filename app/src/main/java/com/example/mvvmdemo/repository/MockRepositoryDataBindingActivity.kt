@@ -1,12 +1,12 @@
 package com.example.mvvmdemo.repository
 
 import android.widget.Toast
-import com.example.mvvm_lib.src.activity.BaseVMActivity
+import com.example.mvvm_lib.src.activity.BaseViewModeDataBindingActivity
 import com.example.mvvmdemo.R
 import com.example.mvvmdemo.databinding.ActivityRepositoryBinding
 
-class MockRepositoryActivity :
-    BaseVMActivity<ActivityRepositoryBinding, MockRepositoryViewModel>(R.layout.activity_repository) {
+class MockRepositoryDataBindingActivity :
+    BaseViewModeDataBindingActivity<ActivityRepositoryBinding, MockRepositoryViewModel>(R.layout.activity_repository) {
 
     override fun initView() {
 

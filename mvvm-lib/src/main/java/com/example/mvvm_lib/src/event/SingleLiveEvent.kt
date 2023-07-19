@@ -9,13 +9,6 @@ import java.util.concurrent.atomic.AtomicBoolean
 
 /**
  *
- * This avoids a common problem with events: on configuration change (like rotation) an update
- * can be emitted if the observer is active. This LiveData only calls the observable if there's an
- * explicit call to setValue() or call().
- *
- *
- * Note that only one observer is going to be notified of changes.
- *
  * 单观察者的事件 可以解决数据倒灌问题
  *
  */
@@ -27,8 +20,6 @@ open class SingleLiveEvent<T> : MutableLiveData<T?>() {
         if (hasActiveObservers()) {
             Log.w(TAG, "Multiple observers registered but only one will be notified of changes.")
         }
-
-        // Observe the internal MutableLiveData
         super.observe(owner!!, Observer { t ->
             if (mPending.compareAndSet(true, false)) {
                 observer.onChanged(t)
@@ -41,7 +32,6 @@ open class SingleLiveEvent<T> : MutableLiveData<T?>() {
         mPending.set(true)
         super.setValue(t)
     }
-
 
     @MainThread
     fun call() {

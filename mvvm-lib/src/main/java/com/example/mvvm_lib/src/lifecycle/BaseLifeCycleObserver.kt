@@ -1,12 +1,12 @@
 @file:Suppress("DEPRECATION")
 
-package com.example.mvvm_lib.src.observer
+package com.example.mvvm_lib.src.lifecycle
 
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 
-interface BaseObserver : LifecycleObserver {
+interface BaseLifeCycleObserver : LifecycleObserver {
     
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     fun onCreate()

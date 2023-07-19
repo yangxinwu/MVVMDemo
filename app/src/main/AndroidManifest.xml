@@ -13,7 +13,7 @@
         android:theme="@style/ThemeOverlay.AppCompat.Dark"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".MainDataBindingActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
@@ -24,19 +24,19 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.LoginBaseViewModelActivity"
+        <activity android:name=".activity.LoginBaseViewModelDataBindingActivity"
             android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
             />
 
-        <activity android:name=".recycleview.RVActivity"
+        <activity android:name=".recycleview.RVDataBindingActivity"
             android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
             />
 
-        <activity android:name=".fragment.TestPagerActivity"
+        <activity android:name=".fragment.TestPagerDataBindingActivity"
             android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
             />
 
-        <activity android:name=".repository.MockRepositoryActivity"
+        <activity android:name=".repository.MockRepositoryDataBindingActivity"
             android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
             />
 
