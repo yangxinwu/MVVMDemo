@@ -12,7 +12,7 @@
             name="viewModel"
             type="com.example.mvvmdemo.recycleview.RVViewModel" />
 
-        <import type="com.example.mvvmdemo.R"/>
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"

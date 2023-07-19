@@ -8,7 +8,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 
 
-abstract class BaseFragment<VB : ViewDataBinding>(@LayoutRes layoutId: Int = 0) :
+abstract class BaseFragment<VB : ViewDataBinding>(@LayoutRes layoutId: Int) :
     Fragment(layoutId) {
 
     lateinit var mBinding: VB

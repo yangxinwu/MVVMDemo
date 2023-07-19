@@ -30,7 +30,6 @@ open class BaseViewModel : ViewModel(), BaseObserver {
 
     }
 
-
     override fun onStop() {
 
     }

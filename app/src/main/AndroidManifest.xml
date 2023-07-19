@@ -24,11 +24,19 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".login.LoginBaseViewModelActivity"
+        <activity android:name=".activity.LoginBaseViewModelActivity"
             android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
             />
 
-        <activity android:name=".recycleview.RecycleViewDemoActivity"
+        <activity android:name=".recycleview.RVActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+            />
+
+        <activity android:name=".fragment.TestPagerActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+            />
+
+        <activity android:name=".repository.MockRepositoryActivity"
             android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
             />
 

@@ -6,7 +6,7 @@ import com.example.mvvmdemo.BR
 import com.example.mvvmdemo.R
 import com.example.mvvmdemo.databinding.ActivityRecycleviewBinding
 
-class RecycleViewDemoActivity :
+class RVActivity :
     BaseVMActivity<ActivityRecycleviewBinding, RVViewModel>(R.layout.activity_recycleview) {
     override fun initVMData() {
         mViewModel.getPictureInfo()
@@ -14,7 +14,11 @@ class RecycleViewDemoActivity :
 
     override fun initView() {
         mBinding.adapter = RVAdapter(emptyList())
-        mBinding.recyclerPicture.addItemDecoration(DividerItemDecoration(this,DividerItemDecoration.VERTICAL))
+        mBinding.recyclerPicture.addItemDecoration(
+            DividerItemDecoration(
+                this, DividerItemDecoration.VERTICAL
+            )
+        )
     }
 
     override fun getVariableId(): Int {

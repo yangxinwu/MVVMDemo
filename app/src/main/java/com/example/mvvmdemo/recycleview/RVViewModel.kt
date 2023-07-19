@@ -42,6 +42,4 @@ class RVViewModel :BaseViewModel(){
             emit(MockData.pictureInfoList)
     }.flowOn(Dispatchers.IO)
 
-
-
 }

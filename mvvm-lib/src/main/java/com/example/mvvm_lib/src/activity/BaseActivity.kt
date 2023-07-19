@@ -24,7 +24,6 @@ abstract class BaseActivity<VB : ViewDataBinding>(@LayoutRes layoutId:Int) :
 
     }
 
-
     abstract fun initView()
 
     abstract fun initData()

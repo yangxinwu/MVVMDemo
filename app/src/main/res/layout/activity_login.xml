@@ -5,7 +5,7 @@
 
         <variable
             name="loginViewModel"
-            type="com.example.mvvmdemo.login.LoginViewModel" />
+            type="com.example.mvvmdemo.activity.LoginViewModel" />
 
     </data>
 
@@ -25,7 +25,7 @@
             android:background="@android:color/darker_gray"
             android:gravity="center|start"
             android:hint="请输入账号："
-            android:text='@={loginViewModel.loginInfo.userName}'
+            android:text='@={loginViewModel.account}'
             android:textColorHint="@color/black"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -42,7 +42,7 @@
             android:background="@android:color/darker_gray"
             android:gravity="center|start"
             android:hint="请输入密码："
-            android:text='@={loginViewModel.loginInfo.passWard}'
+            android:text='@={loginViewModel.password}'
             android:textColorHint="@color/black"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
