@@ -1,3 +1,3 @@
-package com.example.mvvmdemo.activity
+package com.example.mvvmdemo.bean
 
 data class LoginInfo(var userName:String,var passWard:String)

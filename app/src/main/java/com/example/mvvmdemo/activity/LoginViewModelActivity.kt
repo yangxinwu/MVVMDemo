@@ -7,6 +7,7 @@ import android.widget.Toast
 import com.example.mvvm_lib.src.activity.BaseViewModeDataBindingActivity
 import com.example.mvvmdemo.R
 import com.example.mvvmdemo.BR
+import com.example.mvvmdemo.bean.LoginInfo
 import com.example.mvvmdemo.databinding.ActivityLoginBinding
 
 class LoginViewModelActivity :

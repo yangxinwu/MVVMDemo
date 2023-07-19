@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.mvvm_lib.src.event.LiveEvent
 import com.example.mvvm_lib.src.event.SingleLiveEvent
 import com.example.mvvm_lib.src.viewModel.BaseViewModel
+import com.example.mvvmdemo.bean.LoginInfo
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
